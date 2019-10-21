@@ -1,15 +1,18 @@
 window.addEventListener('load', function(e) {
   let boxs = document.querySelectorAll('.box');
-
+  let text = '';
   setInterval(function() {
     for (let i = 0; i < boxs.length; i++) {
       if (boxs[i].classList.contains('border')) {
         boxs[i].classList.remove('border');
+        boxs[i].textContent = text;
       }
     }
     let random = Math.floor(Math.random() * (boxs.length + 1 - 1));
     boxs[random].classList.add('border');
-  }, 700);
+    text = boxs[random].innerText;
+    boxs[random].textContent = 'ПОПАДИ';
+  }, 500);
   // ===================================
   let counter = 0;
   document.addEventListener('click', function(e) {
@@ -21,7 +24,6 @@ window.addEventListener('load', function(e) {
     if (e.target.classList.contains('overlay')) {
       window.location.reload();
     } else if (counter == boxs.length) {
-     
       createDiv();
     }
   });
@@ -36,3 +38,7 @@ window.addEventListener('load', function(e) {
     document.body.insertAdjacentElement('afterbegin', divOverlay);
   }
 });
+let h3 = document.querySelector('h3');
+setInterval(function() {
+  h3.classList.toggle('shadow');
+}, 500);
