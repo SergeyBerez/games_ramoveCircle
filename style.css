@@ -30,13 +30,16 @@ h3 {
   text-align: center;
   text-shadow: 0 0 5px rgb(24, 23, 23), 0 0 10px rgb(24, 23, 23),
     0 0 20px rgb(24, 23, 23);
-  padding-top: 40px;
+  padding-top: 30px;
   color: wheat;
   box-sizing: border-box;
 
   background: radial-gradient(circle at 50% 30%, aqua, darkblue);
   cursor: pointer;
   transition: 0.5s;
+}
+.box:hover {
+  border: 2px dotted red;
 }
 .border {
   box-shadow: 0 0 50px rgb(226, 241, 3), inset 0 0 20px rgb(226, 241, 3);

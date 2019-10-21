@@ -8,7 +8,7 @@ window.addEventListener('load', function(e) {
         boxs[i].textContent = text;
       }
     }
-    let random = Math.floor(Math.random() * (boxs.length + 1 - 1));
+let random = Math.floor(Math.random() * (boxs.length + 1 - 1));
     boxs[random].classList.add('border');
     text = boxs[random].innerText;
     boxs[random].textContent = 'ПОПАДИ';
@@ -23,7 +23,8 @@ window.addEventListener('load', function(e) {
     }
     if (e.target.classList.contains('overlay')) {
       window.location.reload();
-    } else if (counter == boxs.length) {
+    }
+    if (counter == boxs.length) {
       createDiv();
     }
   });
