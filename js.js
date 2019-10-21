@@ -25,6 +25,7 @@ window.addEventListener('load', function(e) {
     if (e.target.classList.contains('overlay')) {
       window.location.reload();
     }
+    console.log(e.target);
     if (counter == boxs.length) {
       createDiv();
     }
