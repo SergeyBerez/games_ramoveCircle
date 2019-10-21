@@ -38,9 +38,7 @@ h3 {
   cursor: pointer;
   transition: 0.5s;
 }
-.box:hover {
-  border: 2px dotted red;
-}
+
 .border {
   box-shadow: 0 0 50px rgb(226, 241, 3), inset 0 0 20px rgb(226, 241, 3);
   border: 2px solid rgb(226, 241, 3);
