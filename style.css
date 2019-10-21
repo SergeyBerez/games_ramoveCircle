@@ -1,0 +1,55 @@
+.cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+  height: 100vh;
+  background: burlywood;
+  margin: 0 auto;
+  /* margin: 0px -10px; */
+}
+.box {
+  /* width: calc(100% / 10 - 10px); */
+  flex-basis: 100px;
+  border-radius: 50%;
+  height: 100px;
+  margin: 5px;
+  text-align: center;
+  font-size: 2rem;
+  color: blue;
+  line-height: 100px;
+  box-sizing: border-box;
+  background-color: brown;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.border {
+  border: 5px solid rgb(226, 241, 3);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(222, 184, 135, 0.527);
+  cursor: pointer;
+}
+
+.modal {
+  border-radius: 5px;
+  position: fixed;
+  top: 30%;
+  left: 40%;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  font-size: 2rem;
+  color: rgb(255, 166, 0);
+  line-height: 200px;
+
+  background-image: url('../img/ava7patterns_pattern_1411.png');
+}
