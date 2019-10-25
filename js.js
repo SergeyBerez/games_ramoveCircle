@@ -1,8 +1,9 @@
 let text = '';
 let boxs = $('.box');
 console.log(boxs.length);
-setInterval(function() {
-  let boxs = $('.box');
+
+//наша функция запускает радномную раскраску дивов
+let startGames = setInterval(function() {
   for (let i = 0; i < boxs.length; i++) {
     if (boxs[i].classList.contains('border')) {
       boxs[i].classList.remove('border');
@@ -12,31 +13,33 @@ setInterval(function() {
   let random = Math.floor(Math.random() * (boxs.length + 1 - 1));
 
   if (boxs.length != 0) {
-    
+    console.log(boxs[random]);
     boxs[random].classList.add('border'); //добавить класс может через .[i]
-    text = boxs.eq(random).text(); // здесь получить текст не может нужно медоту eq( i) обратиться
-
+    text = $(boxs[random]).text(); // здесь получить текст не может boxs[random] возбращает не обьект jqery а элемент дом поэтому нужно медоту eq( i) иоли обернуть так => $(boxs[random])
     boxs[random].textContent = 'ПОПАДИ';
   }
 }, 1000);
 // ===================================
-
+let counter = boxs.length; // получаем  количество дивов при удалении кликнутого дива уменьшаем counter , при условиии коунтера == 0 , заканчиваем игру .
 document.addEventListener('click', function(e) {
   if (e.target.classList.contains('border')) {
     $(e.target).fadeOut(900);
-    $(e.target).attr('data-elem', 'rem');
+    counter--;
+    // ======== дополнительный функционал удаление узла  =======
+    // $(e.target).attr('data-elem', 'rem');
 
-    setTimeout(() => {
-      $('[data-elem]').remove();
-    }, 2000);
+    // setTimeout(() => {
+    //   $('[data-elem]').remove();
+    // }, 2000);
   }
   if (e.target.classList.contains('overlay')) {
     window.location.reload();
   }
 
-  if ($('.box').length == 2) {
+  if (counter == 0) {
     $('.box').remove();
     createDiv();
+    clearInterval(startGames); // очищаем на наш интервал start game
   }
 });
 // ===================================
