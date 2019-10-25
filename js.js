@@ -16,7 +16,7 @@ let startGames = setInterval(function() {
     console.log(boxs[random]);
     boxs[random].classList.add('border'); //добавить класс может через .[i]
     text = $(boxs[random]).text(); // здесь получить текст не может boxs[random] возбращает не обьект jqery а элемент дом поэтому нужно медоту eq( i) иоли обернуть так => $(boxs[random])
-    boxs[random].textContent = 'ПОПАДИ';
+    boxs[random].textContent = 'CLICK ME';
   }
 }, 1000);
 // ===================================
